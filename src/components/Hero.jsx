@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { API_KEY } from './data';
+import { API_KEY } from '../data/data';
 
 const Hero = () => {
     const [movies, setMovies] = useState([])
@@ -15,7 +15,7 @@ const Hero = () => {
             });
     }, []);
     return (
-        <div className='container__hero' style={{background: `url(https://image.tmdb.org/t/p/original/${movies.poster_path})`}}>
+        <div className='container__hero' style={{ background: `url(https://image.tmdb.org/t/p/original/${movies.poster_path})` }}>
             <h1>{movies.title || movies.name || movies.original_name}</h1>
             <div style={{ display: "flex", gap: "10px" }}>
                 <button>Play</button>
