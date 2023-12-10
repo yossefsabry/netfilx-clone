@@ -89,6 +89,7 @@ header img {
     width: 100%;
     height: 600px;
     background-size: contain;
+    position: relative;
     gap: 20px;
     display: flex;
     flex-direction: column;
@@ -99,6 +100,21 @@ header img {
     /* Added position relative */
 }
 
+.container__hero::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23, 23, 23, 0.448);
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+.container__hero * {
+    z-index: 1;
+}
+
 .banner__fadebottom {
     height: 8.4rem;
     background-image: linear-gradient(180deg, transparent, rgb(36 36 36 / 61%), #121212);
@@ -107,4 +123,46 @@ header img {
     left: 0;
     right: 0;
     z-index: 3;
+}
+
+.container__movie {
+    padding: 4rem 2rem;
+    padding-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.content__movie {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content__movie span{
+    color: #777;
+}
+
+@media (max-width: 900px) {
+    .container__movie {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .content__movie {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+.Image__movie__container {
+    max-width: 400px;
+}
+
+.image__movie {
+    width: 100%;
 }

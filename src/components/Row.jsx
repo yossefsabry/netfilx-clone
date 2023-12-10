@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const BASE_URL_IMAGE = "https://image.tmdb.org/t/p/original/"
 
@@ -12,7 +13,7 @@ const Row = (props) => {
                 let fetchedMovies = data.results;
                 setMovies(fetchedMovies);
             });
-    }, [props.url]);
+    }, []);
 
     return (
         <div>
@@ -20,7 +21,9 @@ const Row = (props) => {
                 <h2 className="title__row">{props.name}</h2>
                 <div className="container__movies">
                     {movies.map((item) => (
-                        <img key={item.id} src={`${BASE_URL_IMAGE}${props.isLargeRow ? item.poster_path : item.backdrop_path}`} alt={item.name} className={`Image__movie ${props.isLargeRow == false ? "large__row" : ""}`} />
+                        <Link to={`${item.id}`} key={item.id}>
+                            <img src={`${BASE_URL_IMAGE}${props.isLargeRow ? item.poster_path : item.backdrop_path}`} alt={item.name} className={`Image__movie ${props.isLargeRow == false ? "large__row" : ""}`} />
+                        </Link>
                     ))}
                 </div>
             </div>

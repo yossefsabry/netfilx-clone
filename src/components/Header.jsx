@@ -26,7 +26,7 @@ const Header = () => {
 
     return (
         <header className={`${headerBg ? 'header__bg' : ''}`}>
-            <Link to="/home" style={{ textDecoration: "none" }}>
+            <Link to="/" style={{ textDecoration: "none" }}>
                 <h2>Netflix</h2>
             </Link>
             <div className="image_loader_header">

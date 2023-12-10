@@ -13,9 +13,10 @@ const Hero = () => {
                 ]);
                 // console.log(movies)
             });
+
     }, []);
     return (
-        <div className='container__hero' style={{ background: `url(https://image.tmdb.org/t/p/original/${movies.poster_path})` }}>
+        <div className='container__hero' style={{ background: `url(https://image.tmdb.org/t/p/original/${movies.poster_path||movies.backdrop_path})` }}>
             <h1>{movies.title || movies.name || movies.original_name}</h1>
             <div style={{ display: "flex", gap: "10px" }}>
                 <button>Play</button>
